@@ -2,8 +2,13 @@ import React, { useState } from "react";
 import "../css/mainsection.css";
 import Cloths from "./Cloths";
 
-const MainSection = () => {
+const MainSection = (props) => {
   let [count, setCount] = useState(false);
+  let { addCart, setCart } = props;
+  let addToCart = () => {
+    setCart(addCart + 1);
+    alert("Item added to cart");
+  };
 
   return (
     <>
@@ -16,7 +21,9 @@ const MainSection = () => {
           View More
         </button>
       </main>
-      <section>{count ? <Cloths /> : ""}</section>
+      <section>
+        {count ? <Cloths addCart={addCart} setCart={setCart} /> : ""}
+      </section>
     </>
   );
 };

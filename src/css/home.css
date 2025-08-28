@@ -1,3 +1,4 @@
+/* src/css/home.css */
 body {
   padding: 0;
   margin: 0;
@@ -5,6 +6,7 @@ body {
   font-family: sans-serif;
 }
 
+/* navbar base */
 nav {
   background-color: #b0d8d6;
   width: 100%;
@@ -19,66 +21,144 @@ nav {
 }
 
 .nav-first-child {
-  padding-left: 2rem;
+  padding-left: 1rem;
 }
 
+.nav-first-child a {
+  font-size: 1.6rem;
+  text-decoration: none;
+  color: black;
+  box-shadow: 2px 2px 5px grey;
+  border-radius: 10px;
+  padding: 0.35rem 0.6rem;
+}
+
+/* main nav area (desktop) */
 .nav-second-child {
   display: flex;
   align-items: center;
   gap: 1rem;
-  padding-right: 3rem;
+  padding-right: 1.5rem;
   flex-wrap: nowrap;
 }
 
-.nav-first-child a {
-  font-size: 2rem;
-  text-decoration: none;
-  color: black;
-  box-shadow: 2px 2px 5px grey;
-  border-radius: 10px;
-  padding: 0.4rem;
-}
-
-.nav-first-child a:hover {
-  color: lightyellow;
-}
-
-.nav-second-child {
-  padding-right: 3rem;
-}
-
+/* links */
 .nav-second-child a {
   text-decoration: none;
-  margin-left: 1rem;
-  font-size: 2rem;
+  margin-left: 0.6rem;
+  font-size: 1.05rem;
   color: black;
   box-shadow: 2px 2px 5px grey;
-  padding: 0.2rem;
-  border-radius: 10px;
-  position: relative;
+  padding: 0.35rem 0.6rem;
+  border-radius: 8px;
+  position: relative; /* for badge */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.nav-second-child a:hover {
-  color: lightyellow;
-}
-
-.navbar .nav-second-child a img {
+/* cart image size */
+.navbar .nav-second-child a .cart-img {
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
+  object-fit: cover;
+  margin-right: 0.25rem;
 }
 
+/* badge */
 .cart-badge {
   position: absolute;
-  top: -8px;
-  right: -8px;
+  top: -6px;
+  right: -6px;
   background: red;
   color: white;
-  font-size: 0.9rem;
-  font-weight: bold;
+  font-size: 0.8rem;
+  font-weight: 700;
   padding: 2px 6px;
   border-radius: 50%;
   min-width: 18px;
   text-align: center;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}
+
+/* hamburger: hidden on desktop */
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+}
+
+/* Hover styles */
+.nav-first-child a:hover,
+.nav-second-child a:hover {
+  color: #222;
+  background: rgba(0, 0, 0, 0.04);
+}
+
+/* =========================
+   Responsive mobile & tablet
+   ========================= */
+@media (max-width: 768px) {
+  /* show hamburger */
+  .hamburger {
+    display: block;
+  }
+
+  /* hide desktop menu by default; show only when active */
+  .nav-second-child {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    position: absolute;
+    top: 4rem; /* below navbar */
+    right: 0;
+    left: 0;
+    background-color: #b0d8d6;
+    padding: 0.8rem 1rem 1.2rem;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.06);
+  }
+
+  /* when hamburger toggled */
+  .nav-second-child.active {
+    display: flex;
+  }
+
+  /* full-width stacked links, centered */
+  .nav-second-child a {
+    margin: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 1.25rem;
+    padding: 0.7rem 0.5rem;
+    box-shadow: none;
+  }
+
+  /* make cart image a bit larger on mobile and centered */
+  .nav-second-child a .cart-img {
+    width: 36px;
+    height: 36px;
+    margin-right: 0;
+  }
+
+  /* keep badge in corner of the cart image */
+  .cart-badge {
+    top: -6px;
+    right: calc(50% - 12px); /* keeps badge near center of cart image */
+  }
+}
+
+/* medium screens/tablet tweak */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .nav-first-child a {
+    font-size: 1.5rem;
+  }
+  .nav-second-child a {
+    font-size: 1rem;
+    padding: 0.35rem 0.5rem;
+  }
 }

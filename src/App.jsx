@@ -19,7 +19,7 @@ function App() {
           path="/"
           element={
             <>
-              <Mainsection />
+              <Mainsection addCart={addCart} setCart={setCart} />
               <ProductSection addCart={addCart} setCart={setCart} />
               <ContactForm />
               <Footer />
