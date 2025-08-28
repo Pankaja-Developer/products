@@ -1,9 +1,8 @@
-/* src/css/productsection.css */
 .card-container {
   width: 100%;
   display: flex;
-  flex-wrap: wrap;          /* allow wrapping */
-  justify-content: center;  /* center the cards */
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: stretch;
   gap: 1rem;
   padding: 1rem;
@@ -11,9 +10,8 @@
   box-sizing: border-box;
 }
 
-/* each card */
 .card-box {
-  flex: 0 1 300px; /* preferred width 300px, shrink/grow if needed */
+  flex: 0 1 300px;
   width: 300px;
   display: flex;
   flex-direction: column;
@@ -21,40 +19,36 @@
   background: #fff;
   padding: 0.6rem;
   border-radius: 6px;
-  box-shadow: 1px 1px 6px rgba(0,0,0,0.12);
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.12);
   transition: transform 0.18s ease, box-shadow 0.18s ease;
   box-sizing: border-box;
 }
 
-/* hover effect */
 .card-box:hover {
   transform: translateY(-6px) scale(1.03);
-  box-shadow: 2px 8px 18px rgba(0,0,0,0.12);
+  box-shadow: 2px 8px 18px rgba(0, 0, 0, 0.12);
 }
 
-/* image inside card */
 .card-box img {
   width: 100%;
-  height: auto; /* keep aspect ratio */
+  height: auto;
   display: block;
   border-radius: 6px;
   object-fit: cover;
 }
 
-/* button below image */
 .card-box button {
   margin-top: 10px;
   color: rgb(22, 34, 20);
   padding: 0.5rem 0.9rem;
   border: 1px solid grey;
   border-radius: 6px;
-  box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   font-weight: 700;
   background: #fff;
 }
 
-/* section heading */
 section h1 {
   text-align: center;
   font-family: sans-serif;
@@ -63,16 +57,14 @@ section h1 {
   font-weight: 900;
 }
 
-/* ===== tablet: 2 columns ===== */
 @media (max-width: 1024px) {
   .card-box {
-    flex: 0 1 45%; /* roughly 2 columns */
+    flex: 0 1 45%;
     width: auto;
     max-width: 460px;
   }
 }
 
-/* ===== mobile: 1 column (stacked, centered) ===== */
 @media (max-width: 600px) {
   .card-container {
     gap: 0.9rem;

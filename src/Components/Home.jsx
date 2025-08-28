@@ -1,4 +1,3 @@
-// replace src/Components/Home.jsx with this
 import React, { useState } from "react";
 import "../css/home.css";
 import cart from "../assets/images/cart.jpg";
@@ -15,7 +14,6 @@ const Home = ({ addCart }) => {
         </Link>
       </div>
 
-      {/* hamburger button */}
       <button
         className="hamburger"
         aria-label="Toggle navigation"
@@ -24,7 +22,6 @@ const Home = ({ addCart }) => {
         {isOpen ? "✕" : "☰"}
       </button>
 
-      {/* nav links */}
       <div className={`nav-second-child ${isOpen ? "active" : ""}`}>
         <Link to="/" onClick={() => setIsOpen(false)}>
           Home
@@ -39,7 +36,6 @@ const Home = ({ addCart }) => {
           Contact
         </Link>
 
-        {/* cart link */}
         <Link to="/cart" className="cart-link" onClick={() => setIsOpen(false)}>
           <img src={cart} alt="Cart" className="cart-img" />
           {addCart > 0 && <span className="cart-badge">{addCart}</span>}

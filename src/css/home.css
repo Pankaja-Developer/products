@@ -1,4 +1,3 @@
-/* src/css/home.css */
 body {
   padding: 0;
   margin: 0;
@@ -6,7 +5,6 @@ body {
   font-family: sans-serif;
 }
 
-/* navbar base */
 nav {
   background-color: #b0d8d6;
   width: 100%;
@@ -32,8 +30,6 @@ nav {
   border-radius: 10px;
   padding: 0.35rem 0.6rem;
 }
-
-/* main nav area (desktop) */
 .nav-second-child {
   display: flex;
   align-items: center;
@@ -42,7 +38,6 @@ nav {
   flex-wrap: nowrap;
 }
 
-/* links */
 .nav-second-child a {
   text-decoration: none;
   margin-left: 0.6rem;
@@ -51,13 +46,12 @@ nav {
   box-shadow: 2px 2px 5px grey;
   padding: 0.35rem 0.6rem;
   border-radius: 8px;
-  position: relative; /* for badge */
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
 }
 
-/* cart image size */
 .navbar .nav-second-child a .cart-img {
   width: 2rem;
   height: 2rem;
@@ -66,7 +60,6 @@ nav {
   margin-right: 0.25rem;
 }
 
-/* badge */
 .cart-badge {
   position: absolute;
   top: -6px;
@@ -82,7 +75,6 @@ nav {
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
 }
 
-/* hamburger: hidden on desktop */
 .hamburger {
   display: none;
   font-size: 1.8rem;
@@ -91,31 +83,23 @@ nav {
   cursor: pointer;
   padding: 0.25rem 0.5rem;
 }
-
-/* Hover styles */
 .nav-first-child a:hover,
 .nav-second-child a:hover {
   color: #222;
   background: rgba(0, 0, 0, 0.04);
 }
 
-/* =========================
-   Responsive mobile & tablet
-   ========================= */
 @media (max-width: 768px) {
-  /* show hamburger */
   .hamburger {
     display: block;
   }
-
-  /* hide desktop menu by default; show only when active */
   .nav-second-child {
     display: none;
     flex-direction: column;
     align-items: center;
     gap: 0.5rem;
     position: absolute;
-    top: 4rem; /* below navbar */
+    top: 4rem;
     right: 0;
     left: 0;
     background-color: #b0d8d6;
@@ -123,12 +107,10 @@ nav {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.06);
   }
 
-  /* when hamburger toggled */
   .nav-second-child.active {
     display: flex;
   }
 
-  /* full-width stacked links, centered */
   .nav-second-child a {
     margin: 0;
     width: 100%;
@@ -138,21 +120,18 @@ nav {
     box-shadow: none;
   }
 
-  /* make cart image a bit larger on mobile and centered */
   .nav-second-child a .cart-img {
     width: 36px;
     height: 36px;
     margin-right: 0;
   }
 
-  /* keep badge in corner of the cart image */
   .cart-badge {
     top: -6px;
-    right: calc(50% - 12px); /* keeps badge near center of cart image */
+    right: calc(50% - 12px);
   }
 }
 
-/* medium screens/tablet tweak */
 @media (min-width: 769px) and (max-width: 1024px) {
   .nav-first-child a {
     font-size: 1.5rem;
