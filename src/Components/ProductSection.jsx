@@ -5,7 +5,6 @@ import img5 from "../assets/images/img5.jpg";
 import img2 from "../assets/images/imge2.jpg";
 import img6 from "../assets/images/img6.jpg";
 import img7 from "../assets/images/img7.jpg";
-
 import "../css/productsection.css";
 
 const ProductSection = (props) => {
